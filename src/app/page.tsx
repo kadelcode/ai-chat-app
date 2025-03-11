@@ -1,12 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import Hero from "@/components/sections/Hero";
 
 export default function Home() {
-  const router = useRouter();
-
   return (
     <Hero />
   )
