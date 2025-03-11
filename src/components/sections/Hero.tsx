@@ -2,8 +2,10 @@
 
 // import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
-import Lottie from "lottie-react"
 import chatbotAnimation from "@/assets/chatbot-animation.json";
+import dynamic from "next/dynamic"; // Allows us to laod client-only components without breaking SSR
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export default function Hero() {
     // const router = useRouter();
