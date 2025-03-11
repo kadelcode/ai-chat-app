@@ -2,11 +2,16 @@
 
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import Hero from "@/components/sections/Hero";
 
 export default function Home() {
   const router = useRouter();
 
   return (
+    <Hero />
+  )
+
+  /*return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6">
       <h1 className="text-4xl font-bold mb-4 text-center">
         Welcome to AI-Powered Chat App 🤖
@@ -21,5 +26,5 @@ export default function Home() {
         Get Started
       </Button>
     </main>
-  );
+  );*/
 };
