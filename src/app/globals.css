@@ -1,8 +1,11 @@
 @tailwind utilities;
 
-@import "tailwindcss-animate"; /* Ensure the plugin is installed */
 
-@custom-variant dark (.dark &);
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -120,5 +123,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /*body {
+    @apply bg-background text-foreground;
+  }*/
 }
-
