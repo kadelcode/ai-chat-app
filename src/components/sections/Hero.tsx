@@ -1,10 +1,13 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import Lottie from "lottie-react"
 import chatbotAnimation from "@/assets/chatbot-animation.json";
 
 export default function Hero() {
+    const router = useRouter();
+
     return (
         <section className="bg-gradient-to-r from-blue-100 to-blue-200 py-5 px-4 md:px-0">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -17,6 +20,7 @@ export default function Hero() {
                     </p>
                     <Button
                       className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-6 px-9 rounded-full transition cursor-pointer"
+                      onClick={() => router.push("/login")}
                     >
                         Try it Free
                     </Button>
@@ -27,5 +31,5 @@ export default function Hero() {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
