@@ -11,7 +11,7 @@ export default function Hero() {
     // const router = useRouter();
 
     return (
-        <section className="bg-gradient-to-r from-blue-100 to-blue-200 py-5 px-4 md:px-0">
+        <section className="bg-gradient-to-r from-[#dbeafe] to-blue-200 py-5 px-4 md:px-0">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
                 <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
                     <h1 className="text-4xl md:text-5xl font-bold text-[#163cb8] mb-4">
@@ -21,7 +21,7 @@ export default function Hero() {
                         Experience smarter conversations and boost productivity with our AI-powered chat app.
                     </p>
                     <Button
-                      className="bg-blue-600 hover:bg-[#1447e6] text-white text-lg font-bold py-6 px-9 rounded-full transition cursor-pointer"
+                      className="bg-[#155dfc] hover:bg-[#1447e6] text-white text-lg font-bold py-6 px-9 rounded-full transition cursor-pointer"
                       
                     >
                         Try it Free
