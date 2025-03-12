@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import { Inter, Saira } from "next/font/google";
+import { Saira } from "next/font/google";
 
-const sancreek = Saira({
+const saira = Saira({
     subsets: ["latin"], // Supports different character sets
     weight: "400",      // Specify font weight
     variable: "--font-sancreek", // Optional CSS variable
@@ -20,7 +20,7 @@ export default function Header() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex gap-2 items-center">
             <Image alt="logo" src="/logo-transparent.png" width={40} height={40} />
-            <span className={`text-[#193cb8] text-xl font-bold ${sancreek.className}`}>Nova Chat</span>
+            <span className={`text-[#193cb8] text-xl font-bold ${saira.className}`}>Nova Chat</span>
           </div>
 
           {/* Mobile Menu Button */}
