@@ -60,6 +60,7 @@ const StackedCards = () => {
                   >
                     {testimonial.initials}
                   </div>
+                  <h3 className="mt-4 text-xl font-semibold">{testimonial.name}</h3>
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, j) => (
                       <Star
