@@ -1,3 +1,4 @@
+import { Link } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
@@ -41,18 +42,18 @@ export default function Header() {
               isMenuOpen ? 'flex flex-col mt-4' : 'hidden md:flex'
             }`}
           >
-            <a href="/" className="text-gray-300 hover:text-white">
+            <Link href="/" className="text-gray-300 hover:text-white">
               Home
-            </a>
-            <a href="/features" className="text-gray-300 hover:text-white">
+            </Link>
+            <Link href="/features" className="text-gray-300 hover:text-white">
               Features
-            </a>
-            <a href="/pricing" className="text-gray-300 hover:text-white">
+            </Link>
+            <Link href="/pricing" className="text-gray-300 hover:text-white">
               Pricing
-            </a>
-            <a href="/contact" className="text-gray-300 hover:text-white">
+            </Link>
+            <Link href="/contact" className="text-gray-300 hover:text-white">
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       </header>
