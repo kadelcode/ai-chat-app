@@ -4,6 +4,7 @@ import { Features } from "@/components/sections/Features";
 import Hero from "@/components/sections/Hero";
 import { Testimonials } from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Features />
       <Testimonials />
       <CTA />
+      <Footer />
     </>
   )
 
