@@ -1,5 +1,6 @@
-import { Link } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,13 +9,16 @@ export default function Header() {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <header className="bg-gray-800 py-4 px-6">
+        <header className="bg-[#C7DFFF] bg-gradient-to-r from-[#dbeafe] to-[#bedbff] py-4 px-6">
         <div className="container mx-auto flex justify-between items-center">
-          <div className="text-white font-bold text-xl">AI Chat App</div>
+          <div className="flex gap-2 items-center">
+            <Image alt="logo" src="/logo-transparent.png" width={40} height={40} />
+            <span className="text-[#193cb8] text-xl font-bold">Nova Chat</span>
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-white">
+            <button onClick={toggleMenu} className="text-[#fff]">
               <svg
                 className="h-6 w-6 fill-current"
                 viewBox="0 0 24 24"
@@ -42,17 +46,14 @@ export default function Header() {
               isMenuOpen ? 'flex flex-col mt-4' : 'hidden md:flex'
             }`}
           >
-            <Link href="/" className="text-gray-300 hover:text-white">
-              Home
-            </Link>
-            <Link href="/features" className="text-gray-300 hover:text-white">
+            <Link href="/features" className="text-[#2D72CB] text-lg font-bold hover:text-white">
               Features
             </Link>
-            <Link href="/pricing" className="text-gray-300 hover:text-white">
+            <Link href="/pricing" className="text-[#2D72CB] text-lg font-bold hover:text-white">
               Pricing
             </Link>
-            <Link href="/contact" className="text-gray-300 hover:text-white">
-              Contact
+            <Link href="/contact" className="text-[#2D72CB] text-lg font-bold hover:text-white">
+              Testimonials
             </Link>
           </nav>
         </div>
