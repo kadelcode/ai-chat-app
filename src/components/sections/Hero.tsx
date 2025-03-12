@@ -17,7 +17,7 @@ export default function Hero() {
                     <h1 className="text-4xl md:text-5xl font-bold text-[#163cb8] mb-4">
                         Unlock Instant Answers with Your AI Chat Assistant
                     </h1>
-                    <p className="text-lg text-gray-700 mb-8">
+                    <p className="text-lg text-[#364153] mb-8">
                         Experience smarter conversations and boost productivity with our AI-powered chat app.
                     </p>
                     <Button
