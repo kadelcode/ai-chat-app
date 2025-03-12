@@ -52,7 +52,7 @@ const StackedCards = () => {
               transition={{ duration: 0.5 }}
               className="absolute w-full"
             >
-              <Card className="p-4 shadow-lg border border-[#e5e7eb] dark:border-[#364153]">
+              <Card className="p-4 shadow-lg border border-[#e5e7eb] dark:border-[#364153] bg-[#fff]">
                 <CardContent className="flex flex-col items-center text-center space-y-3">
                   <div
                     className="w-14 h-14 flex items-center justify-center rounded-full text-white text-lg font-bold"
