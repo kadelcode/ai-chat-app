@@ -47,7 +47,7 @@ export function Pricing() {
                                 ))}
                             </ul>
                             <Button className="mt-6 relative bottom-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full cursor-pointer">
-                                Get Started
+                                { plan.duration === "custom" ? "Contact Sales" : "Get Started" }
                             </Button>
                         </div>
                     ))}

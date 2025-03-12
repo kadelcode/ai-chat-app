@@ -53,13 +53,13 @@ export default function Header() {
               isMenuOpen ? 'flex flex-col mt-4' : 'hidden md:flex'
             }`}
           >
-            <Link href="/features" className="text-[#2D72CB] text-lg font-bold hover:text-white">
+            <Link href="/features" className="text-[#193cb8] text-lg hover:text-[#2D72CB]">
               Features
             </Link>
-            <Link href="/pricing" className="text-[#2D72CB] text-lg font-bold hover:text-white">
+            <Link href="/pricing" className="text-[#193cb8] text-lg hover:text-[#2D72CB]">
               Pricing
             </Link>
-            <Link href="/contact" className="text-[#2D72CB] text-lg font-bold hover:text-white">
+            <Link href="/contact" className="text-[#193cb8] text-lg hover:text-[#2D72CB]">
               Testimonials
             </Link>
           </nav>
