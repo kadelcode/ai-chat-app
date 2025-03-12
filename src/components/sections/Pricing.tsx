@@ -46,7 +46,7 @@ export function Pricing() {
                                     </li>
                                 ))}
                             </ul>
-                            <Button className="mt-6 relative bottom-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full cursor-pointer">
+                            <Button className="mt-6 relative bottom-2 bg-[#155dfc] hover:bg-[#1447e6] text-[#fff] font-bold py-3 px-6 rounded-full cursor-pointer">
                                 { plan.duration === "custom" ? "Contact Sales" : "Get Started" }
                             </Button>
                         </div>
