@@ -52,7 +52,7 @@ const StackedCards = () => {
               transition={{ duration: 0.5 }}
               className="absolute w-full"
             >
-              <Card className="p-4 shadow-lg border border-gray-200 dark:border-gray-700">
+              <Card className="p-4 shadow-lg border border-[#e5e7eb] dark:border-[#364153]">
                 <CardContent className="flex flex-col items-center text-center space-y-3">
                   <div
                     className="w-14 h-14 flex items-center justify-center rounded-full text-white text-lg font-bold"
@@ -67,13 +67,13 @@ const StackedCards = () => {
                         size={18}
                         className={
                           j < Math.floor(testimonial.rating)
-                            ? "text-yellow-500"
-                            : "text-gray-300 dark:text-gray-600"
+                            ? "text-[#efb100]"
+                            : "text-gray-300 dark:text-[#4a5556]"
                         }
                       />
                     ))}
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">{testimonial.review}</p>
+                  <p className="text-[#364153] dark:text-[#d1d5dc]">{testimonial.review}</p>
                 </CardContent>
               </Card>
             </motion.div>
