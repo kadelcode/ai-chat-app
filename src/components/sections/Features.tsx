@@ -35,7 +35,7 @@ export function Features() {
         <section className="py-16 px-4 md:px-0 bg-white">
             <div className="container mx-auto">
                 <h2 className="text-3xl font-semibold text-center text-[#1e2939] mb-12">Key Features and Benefits</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 bg-[#3d50f7]">
                     { features.map((feature, index) => (
                         <div className="text-center p-6 shadow-md rounded-md" key={index}>
                             {feature.icon}
