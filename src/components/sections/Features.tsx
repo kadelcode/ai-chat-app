@@ -37,7 +37,7 @@ export function Features() {
                 <h2 className="text-3xl font-semibold text-center text-[#1e2939] mb-12">Key Features and Benefits</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     { features.map((feature, index) => (
-                        <div className="text-center p-6 shadow-md rounded-md shadow-[#d1d5dc]" key={index}>
+                        <div className="text-center p-6 shadow-md rounded-md shadow-[#d1d5dc] bg-[#eff6ff]" key={index}>
                             {feature.icon}
                             <h3 className="text-xl font-semibold text-[#1e2939] mb-2">{feature.title}</h3>
                             <p className="text-[#4a5565]">{feature.description}</p>
