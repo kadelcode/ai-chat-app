@@ -84,10 +84,9 @@ export default function Header() {
       </header>
       {isMenuOpen && (
       <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -100 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        initial={{ opacity: 0, x: 100, transition: {duration: 0.6, ease: "easeInOut"} }}
+        animate={{ opacity: 1, x: 0, transition: {duration: 0.6, ease: "easeInOut"} }}
+        exit={{ opacity: 0, y: 100, transition: {duration: 0.6, ease: "easeInOut"} }}
         ref={menuRef}
         className="md:hidden bg-[#111] space-x-4"
       >
