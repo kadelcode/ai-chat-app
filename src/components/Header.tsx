@@ -90,7 +90,7 @@ export default function Header() {
         ref={menuRef}
         className="md:hidden bg-[#111] space-x-4"
       >
-        <div className="flex flex-col w-full sm:w-1/2 bg-[#fff] fixed right-0">
+        <div className="flex flex-col w-full sm:w-1/2 bg-[#fff] fixed right-0 z-50">
         <Link href="/features" className="text-[#193cb8] ml-3 mt-3 mb-2 text-lg hover:text-[#2D72CB]">
           Features
         </Link>
