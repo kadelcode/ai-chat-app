@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Saira } from "next/font/google";
 import { Button } from "./ui/button";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const saira = Saira({
     subsets: ["latin"], // Supports different character sets
