@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Saira } from "next/font/google";
+import { Button } from "./ui/button";
+import { easeInOut, motion } from "framer-motion";
 
 const saira = Saira({
     subsets: ["latin"], // Supports different character sets
@@ -11,11 +13,28 @@ const saira = Saira({
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+    const menuButtonRef = useRef<HTMLButtonElement>(null)
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
+    // Close menu when clicking outside
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (menuRef.current &&
+                !menuRef.current.contains(event.target as Node) &&
+                menuButtonRef.current &&
+                !menuButtonRef.current.contains(event.target as Node)) {
+                    setIsMenuOpen(false)
+            }
+        }
+        if (isMenuOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+    }, [isMenuOpen]);
+
     return (
+        <>
         <header className="bg-[#C7DFFF] bg-gradient-to-r from-[#dbeafe] to-[#bedbff] py-4 px-6">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex gap-2 items-center">
@@ -25,7 +44,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-[#fff]">
+            <Button ref={menuButtonRef} onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-[#193cb8] bg-[#fff] hover:bg-[#f3f4f6] cursor-pointer">
               <svg
                 className="h-6 w-6 fill-current"
                 viewBox="0 0 24 24"
@@ -44,14 +63,12 @@ export default function Header() {
                   />
                 )}
               </svg>
-            </button>
+            </Button>
           </div>
 
           {/* Desktop Navigation */}
           <nav
-            className={`md:flex space-x-4 ${
-              isMenuOpen ? 'flex flex-col mt-4' : 'hidden md:flex'
-            }`}
+            className='hidden md:flex flex-row justify-between items-center space-x-4 mt-4'
           >
             <Link href="/features" className="text-[#193cb8] text-lg hover:text-[#2D72CB]">
               Features
@@ -65,5 +82,28 @@ export default function Header() {
           </nav>
         </div>
       </header>
+      {isMenuOpen && (
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        ref={menuRef}
+        className="md:hidden bg-[#111] space-x-4"
+      >
+        <div className="flex flex-col w-full sm:w-1/2 bg-[#fff] fixed right-0">
+        <Link href="/features" className="text-[#193cb8] ml-3 mt-3 mb-2 text-lg hover:text-[#2D72CB]">
+          Features
+        </Link>
+        <Link href="/pricing" className="text-[#193cb8] ml-3 text-lg mb-2 hover:text-[#2D72CB]">
+          Pricing
+        </Link>
+        <Link href="/contact" className="text-[#193cb8] ml-3 text-lg mb-3 hover:text-[#2D72CB]">
+          Testimonials
+        </Link>
+        </div>
+      </motion.div>
+      )}
+      </>
     );
 };
