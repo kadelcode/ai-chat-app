@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Saira } from "next/font/google";
 import { Button } from "./ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const saira = Saira({
     subsets: ["latin"], // Supports different character sets
@@ -11,10 +11,31 @@ const saira = Saira({
     variable: "--font-sancreek", // Optional CSS variable
 });
 
+const dropdownVariants = {
+    open: {
+      y: 0, // Slide down
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+    closed: {
+      y: "-100%", // Slide up and out of view
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      }
+    }
+  }
+
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const menuButtonRef = useRef<HTMLButtonElement>(null)
+    const navbarRef = useRef<HTMLDivElement>(null);
+    const [navbarHeight, setNavBarHeight] = useState(0);
 
     // Close menu when clicking outside
     useEffect(() => {
@@ -33,14 +54,29 @@ export default function Header() {
         }
     }, [isMenuOpen]);
 
+    useEffect(() => {
+        // Calculate dropdown top position
+        if (navbarRef.current) {
+            setNavBarHeight(navbarRef.current.offsetHeight); //72px// Update state
+            console.log(navbarRef.current.offsetHeight);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (menuRef.current && isMenuOpen && navbarHeight > 0) {
+            menuRef.current.style.marginTop = `${navbarHeight}px`;
+        } else if (menuRef.current) {
+            menuRef.current.style.top = ``;
+        }
+    }, [isMenuOpen, navbarHeight]); // Add navbarHeight as a dependency
+
     return (
         <>
-        <header className="bg-[#C7DFFF] bg-gradient-to-r from-[#dbeafe] to-[#bedbff] py-4 px-6">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex gap-2 items-center">
+        <header ref={navbarRef} className="bg-[#C7DFFF] bg-gradient-to-r from-[#dbeafe] to-[#bedbff] flex justify-between items-center py-4 px-6 fixed w-full z-50">
+          <Link href="/" className="flex items-center">
             <Image alt="logo" src="/logo-transparent.png" width={40} height={40} />
             <span className={`text-[#193cb8] text-xl font-bold ${saira.className}`}>Nova Chat</span>
-          </div>
+          </Link>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -68,7 +104,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav
-            className='hidden md:flex flex-row justify-between items-center space-x-4 mt-4'
+            className='hidden md:flex flex-row justify-between items-center space-x-4'
           >
             <Link href="/features" className="text-[#193cb8] text-lg hover:text-[#2D72CB]">
               Features
@@ -80,29 +116,29 @@ export default function Header() {
               Testimonials
             </Link>
           </nav>
-        </div>
       </header>
-      {isMenuOpen && (
-      <motion.div
-        initial={{ opacity: 0, x: 100, transition: {duration: 0.6, ease: "easeInOut"} }}
-        animate={{ opacity: 1, x: 0, transition: {duration: 0.6, ease: "easeInOut"} }}
-        exit={{ opacity: 0, y: 100, transition: {duration: 0.6, ease: "easeInOut"} }}
-        ref={menuRef}
-        className="md:hidden bg-[#111] space-x-4"
-      >
-        <div className="flex flex-col w-full sm:w-1/2 bg-[#fff] fixed right-0 z-50">
-        <Link href="/features" className="text-[#193cb8] ml-3 mt-3 mb-2 text-lg hover:text-[#2D72CB]">
-          Features
-        </Link>
-        <Link href="/pricing" className="text-[#193cb8] ml-3 text-lg mb-2 hover:text-[#2D72CB]">
-          Pricing
-        </Link>
-        <Link href="/contact" className="text-[#193cb8] ml-3 text-lg mb-3 hover:text-[#2D72CB]">
-          Testimonials
-        </Link>
-        </div>
-      </motion.div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+        <motion.div
+            initial={{ opacity: 0, x: 100, transition: {duration: 0.4, ease: "easeInOut"} }}
+            animate={{ opacity: 1, x: 0, transition: {duration: 0.4, ease: "easeInOut"} }}
+            exit={{ opacity: 0, x: 100, transition: {duration: 0.4, ease: "easeInOut"} }}
+            className="md:hidden bg-[#111] space-x-4"
+        >
+            <div ref={menuRef} className="flex flex-col w-full sm:w-1/2 bg-[#fff] fixed right-0 z-50">
+                <Link href="/features" className="text-[#193cb8] ml-3 mt-3 mb-2 text-lg hover:text-[#2D72CB]">
+                Features
+                </Link>
+                <Link href="/pricing" className="text-[#193cb8] ml-3 text-lg mb-2 hover:text-[#2D72CB]">
+                Pricing
+                </Link>
+                <Link href="/contact" className="text-[#193cb8] ml-3 text-lg mb-3 hover:text-[#2D72CB]">
+                Testimonials
+                </Link>
+            </div>
+        </motion.div>
+        )}
+      </AnimatePresence>
       </>
     );
 };

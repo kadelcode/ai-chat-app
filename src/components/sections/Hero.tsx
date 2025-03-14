@@ -11,7 +11,7 @@ export default function Hero() {
     // const router = useRouter();
 
     return (
-        <section className="bg-[#C7DFFF] bg-gradient-to-r from-[#dbeafe] to-[#bedbff] py-5 px-4 md:px-0">
+        <section className="bg-[#C7DFFF] bg-gradient-to-r from-[#dbeafe] to-[#bedbff] py-5 px-4 md:px-0 pt-24 lg:pt-9">
             <div className="container mt-6 md:mt-0 mx-auto flex flex-col md:flex-row items-center justify-between">
                 <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
                     <h1 className="text-4xl md:text-5xl font-bold text-[#163cb8] mb-4">
