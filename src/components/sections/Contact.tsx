@@ -2,7 +2,7 @@ export default function Contact() {
     return (
         <section id="contact" className="py-16 px-4 md:px-0 bg-white">
             <div className="container mx-auto">
-                <h2 className="text-3xl font-semibold text-center text-gray-800 mb-12">
+                <h2 className="text-3xl font-semibold text-center text-[#1e2939] mb-12">
                     Contact Us
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -11,13 +11,13 @@ export default function Contact() {
                         <form className="space-y-4">
                             {/* Name div */}
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="name" className="block text-sm font-medium text-[#364153]">
                                     Name
                                 </label>
                                 <input
                                   type="text"
                                   id="name"
-                                  className="mt-2 block w-full p-3 border-gray-300 shadow-sm border-2 focus:border-blue-500"
+                                  className="mt-2 block w-full p-3 border-[#d1d5dc] shadow-sm border-2 focus:border-[#2b7fff]"
                                   placeholder="Your Name"
                                   autoComplete="true"
                                 />
@@ -25,13 +25,13 @@ export default function Contact() {
 
                             {/* Email div */}
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="email" className="block text-sm font-medium text-[#364153]">
                                     Email
                                 </label>
                                 <input
                                   type="email"
                                   id="email"
-                                  className="mt-2 block w-full p-3 shadow-sm border-2 focus:border-blue-500"
+                                  className="mt-2 block w-full p-3 shadow-sm border-2 focus:border-[#2b7fff]"
                                   placeholder="Your Email"
                                   autoComplete="email"
                                 />
@@ -39,19 +39,19 @@ export default function Contact() {
 
                             {/* Message div */}
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-grey-700">
+                                <label htmlFor="message" className="block text-sm font-medium text-[#364153]">
                                     Message
                                 </label>
                                 <textarea
                                   id="message"
                                   rows={5}
-                                  className="mt-2 block w-full p-3 rounded-md border-gray-300 shadow-sm border-2 focus:border-blue-500"
+                                  className="mt-2 block w-full p-3 rounded-md border-[#d1d5dc] shadow-sm border-2 focus:border-[#2b7fff]"
                                   
                                   ></textarea>
                             </div>
                             <button
                               type="submit"
-                              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full cursor-pointer"
+                              className="bg-[#155dfc] hover:bg-[#1447e6] text-white font-bold py-3 px-6 rounded-full cursor-pointer"
                             >
                                 Submit
                             </button>
@@ -59,7 +59,7 @@ export default function Contact() {
                     </div>
 
                     {/* Contact Information */}
-                    <div className="text-gray-700">
+                    <div className="text-[#364153]">
                         <h3 className="text-xl font-semibold mb-4">Our Information</h3>
                         <p className="mb-2">
                             <strong>Address:</strong> 123 Main Street, Anytown, CA 12345
@@ -74,7 +74,7 @@ export default function Contact() {
                         <div className="mt-6">
                             <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
                             <div className="flex space-x-4">
-                                <a href="#" className="text-blue-500 hover:text-blue-700">
+                                <a href="#" className="text-[#2b7fff] hover:text-[#1447e6]">
                                     <svg
                                     className="h-6 w-6"
                                     fill="currentColor"
