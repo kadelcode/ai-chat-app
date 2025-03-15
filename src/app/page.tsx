@@ -6,6 +6,7 @@ import Hero from "@/components/sections/Hero";
 import { Pricing } from "@/components/sections/Pricing";
 import { Testimonials } from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
+import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Pricing />
       <Testimonials />
       <CTA />
+      <Contact />
       <Footer />
     </>
   )
