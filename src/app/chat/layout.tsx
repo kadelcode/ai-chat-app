@@ -1,5 +1,11 @@
-import { AuthProviderComponent } from "@/context/AuthContext";
+import { Metadata } from "next";
 
-export default function ChatLayout({ children }: { children: React.ReactNode}) {
-    return <AuthProviderComponent>{children}</AuthProviderComponent>
+export const metadata: Metadata = {
+    title: "Dashboard",
+    description: "Chat Dashboard",
+    icons: "nova-favicon.ico",
+};
+
+export default function LoginLayout({ children }: { children: React.ReactNode }) {
+    return <>{children}</>;
 }
