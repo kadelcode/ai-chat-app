@@ -20,6 +20,7 @@ export default function Contact() {
                                   className="mt-2 block w-full p-3 border-[#d1d5dc] shadow-sm border-2 focus:border-[#2b7fff]"
                                   placeholder="Your Name"
                                   autoComplete="true"
+                                  style={{ border: "2px solid #2b7fff"}}
                                 />
                             </div>
 
@@ -34,6 +35,7 @@ export default function Contact() {
                                   className="mt-2 block w-full p-3 shadow-sm border-2 focus:border-[#2b7fff]"
                                   placeholder="Your Email"
                                   autoComplete="email"
+                                  style={{ border: "2px solid #2b7fff"}}
                                 />
                             </div>
 
@@ -46,7 +48,7 @@ export default function Contact() {
                                   id="message"
                                   rows={5}
                                   className="mt-2 block w-full p-3 rounded-md border-[#d1d5dc] shadow-sm border-2 focus:border-[#2b7fff]"
-                                  
+                                  style={{ border: "2px solid #2b7fff"}}
                                   ></textarea>
                             </div>
                             <button

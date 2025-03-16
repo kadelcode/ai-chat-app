@@ -87,8 +87,8 @@ export default function LoginPage() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="p-3 rounded-md border-2"
-          style={{border: "2px solid #193cb8"}}
+          className="p-3 rounded-md border-2 outline-0"
+          style={{border: "2px solid #155dfc"}}
         />
         <input
           type="password"
@@ -96,8 +96,8 @@ export default function LoginPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="p-3 rounded-md border-2 border-[#193cb8]"
-          style={{border: "2px solid #193cb8"}}
+          className="p-3 rounded-md border-2 border-[#155dfc] outline-0"
+          style={{border: "2px solid #155dfc"}}
         />
 
         <Button type="submit" className="bg-[#155dfc] hover:bg-[#1447e6] text-white cursor-pointer" disabled={loading}>
@@ -116,7 +116,7 @@ export default function LoginPage() {
       </div>
 
       <p className="mt-4">
-        Don’t have an account? <Link href="/register" className="text-blue-400">Sign up</Link>
+        Don’t have an account? <Link href="/register" className="text-[#51a2ff]">Sign up</Link>
       </p>
       </>
       )}
