@@ -61,14 +61,15 @@ export default function LoginPage() {
           className="p-3 border rounded-md"
         />
 
-        <Button type="submit" className="bg-blue-700" disabled={loading}>
-            { loading ? <Loader2 /> : "Login" }
+        <Button type="submit" className="bg-[#155dfc] hover:bg-[#1447e6] text-white cursor-pointer" disabled={loading}>
+            { loading ? <Loader2 className="animate-spin" /> : "Login" }
         </Button>
       </form>
 
-      <div className="mt-4 bg-gray-700">
+      <div className="mt-4">
         <Button
           onClick={() => signInWithPopup(auth, googleProvider)}
+          className="cursor-pointer rounded-md bg-[#364153]"
         >
             Sign in with Google
         </Button>
