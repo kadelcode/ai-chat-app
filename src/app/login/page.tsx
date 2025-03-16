@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "@/lib/firebase";
+import SkeletonLogin from "@/components/SkeletonLogin";
 
 
 export default function LoginPage() {
@@ -17,6 +18,38 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  
+  useEffect(() => {
+    let isMounted = true;
+    const startTime = performance.now();
+
+    const fetchData = async () => {
+      try {
+        await fetch("https://jsonplaceholder.typicode.com/posts/1"); // Simulated API request
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        if (!isMounted) return;
+
+        const endTime = performance.now();
+        const elapsedTime = endTime - startTime;
+        const MIN_SKELETON_TIME = 1500; // Keep skeleton for at least 1.5s
+
+        setTimeout(() => {
+          if (isMounted) setIsLoading(false);
+        }, Math.max(MIN_SKELETON_TIME - elapsedTime, 0));
+
+      }
+    };
+
+    fetchData();
+
+    return () => {
+      isMounted = false; // Prevent state updates after unmount
+    }
+  }, []);
 
 
   const handleEmailLogin = async (e: React.FormEvent) => {
@@ -39,6 +72,10 @@ export default function LoginPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      { isLoading ?
+        ( <SkeletonLogin /> ) :  
+      (
+      <>
       <h1 className="text-3xl font-bold mb-4">Login to Your Account</h1>
             
       <form onSubmit={handleEmailLogin} className="flex flex-col gap-4 w-80">
@@ -79,6 +116,8 @@ export default function LoginPage() {
       <p className="mt-4">
         Don’t have an account? <Link href="/register" className="text-blue-400">Sign up</Link>
       </p>
+      </>
+      )}
     </motion.main>
   );
 }
