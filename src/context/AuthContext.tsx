@@ -38,7 +38,7 @@ import {
     User } from "firebase/auth";
 
 // Next.js Router
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 // This context will hold the authenticated user's information
 /**
@@ -69,7 +69,7 @@ export const AuthProviderComponent = ({ children }: { children: React.ReactNode 
     // const [loading, setLoading] = useState(true);
 
     // `router` is initialized using the `useRouter` hook from Next.js
-    const router = useRouter();
+    // const router = useRouter();
 
     // Set up a listener for changes in the authentication state.
     useEffect(() => {

@@ -60,7 +60,7 @@ export default function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/chat"); // Redirect to chat after login
-    } catch (err) {
+    } catch {
       setError("Invalid email or password");
     }
     setLoading(false);

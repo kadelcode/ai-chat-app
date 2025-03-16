@@ -4,7 +4,7 @@ import { Loader2 } from "lucide-react";
 
 
 export default function ChatPage() {
-    const { user, loading } = useAuth(); // Protects this page
+    const { loading } = useAuth(); // Protects this page
 
     if (loading) {
         return (
