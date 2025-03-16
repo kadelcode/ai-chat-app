@@ -35,7 +35,7 @@ export function Pricing() {
                     { pricingPlans.map((plan, index) => (
                         <div
                           className="bg-[#fff] rounded-lg border-2 border-[#155dfc] p-6 text-center"
-                          style={{ borderColor: "#155dfc" }}
+                          style={{ border: "2px solid #155dfc" }}
                           key={index}>
                             <h3 className="text-2xl font-semibold text-[#1e2939] mb-4">{plan.name}</h3>
                             <div className="text-4xl font-bold text-[#193cb8] mb-4">
