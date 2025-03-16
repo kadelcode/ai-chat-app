@@ -108,7 +108,7 @@ export default function LoginPage() {
       <div className="mt-4">
         <Button
           onClick={() => signInWithPopup(auth, googleProvider)}
-          className="cursor-pointer rounded-md bg-[#364153]"
+          className="cursor-pointer rounded-md bg-[#364153] text-[#fff]"
         >
             Sign in with Google
         </Button>
