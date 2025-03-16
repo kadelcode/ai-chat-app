@@ -4,7 +4,8 @@ import Image from "next/image";
 import { Saira } from "next/font/google";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import Link from "next/link";
 
 const saira = Saira({
     subsets: ["latin"], // Supports different character sets
@@ -57,17 +58,23 @@ export default function Header() {
         <>
         <header ref={navbarRef} className="bg-[#C7DFFF] bg-gradient-to-r from-[#dbeafe] to-[#bedbff] flex justify-between items-center py-4 px-6 fixed w-full z-50">
           {/* Site logo */}
-          <Link
+          <ScrollLink
             to="hero" // Matches the 'name' prop of the section
             smooth={true}
             duration={500}
             className="flex items-center cursor-pointer">
             <Image alt="logo" src="/logo-transparent.png" width={40} height={40} />
             <span className={`text-[#193cb8] text-xl font-bold ${saira.className}`}>Nova Chat</span>
-          </Link>
+          </ScrollLink>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/*Login & Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Sign in button */}
+            <Link href="/login">
+              <Button className="cursor-pointer bg-[#155dfc] hover:bg-[#1447e6] text-white ">Login</Button>
+            </Link>
+
+            {/* Menu button */}
             <Button ref={menuButtonRef} onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-[#193cb8] bg-[#fff] hover:bg-[#f3f4f6] cursor-pointer">
               <svg
                 className="h-6 w-6 fill-current"
@@ -94,30 +101,38 @@ export default function Header() {
           <nav
             className='hidden md:flex flex-row justify-between items-center space-x-4'
           >
-            <Link
+            <ScrollLink
               to="features"
               smooth={true}
               duration={500}
               className="text-[#193cb8] text-lg hover:text-[#2D72CB] cursor-pointer"
             >
               Features
-            </Link>
-            <Link
+            </ScrollLink>
+            <ScrollLink
               to="pricing"
               smooth={true}
               duration={500}
               className="text-[#193cb8] text-lg hover:text-[#2D72CB] cursor-pointer"
             >
               Pricing
-            </Link>
-            <Link
+            </ScrollLink>
+            <ScrollLink
               to="testimonials"
               smooth={true}
               duration={500}
               className="text-[#193cb8] text-lg hover:text-[#2D72CB] cursor-pointer">
               Testimonials
-            </Link>
+            </ScrollLink>
+            <div className="hidden md:block">
+          </div>
           </nav>
+
+          <div className="hidden md:block">
+            <Link href="/login">
+              <Button className="cursor-pointer bg-[#155dfc] hover:bg-[#1447e6] text-white">Login</Button>
+            </Link>
+          </div>
       </header>
       <AnimatePresence>
         {isMenuOpen && (
@@ -129,7 +144,7 @@ export default function Header() {
             
         >
             <div ref={menuRef} className="flex flex-col w-full sm:w-1/2 bg-[#fff] fixed right-0 z-50">
-                <Link
+                <ScrollLink
                   to="features"
                   smooth="true"
                   duration={500}
@@ -137,8 +152,8 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                 Features
-                </Link>
-                <Link
+                </ScrollLink>
+                <ScrollLink
                   to="pricing"
                   smooth={true}
                   duration={500}
@@ -146,8 +161,8 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   >
                 Pricing
-                </Link>
-                <Link
+                </ScrollLink>
+                <ScrollLink
                   to="testimonials"
                   smooth={true}
                   duration={500}
@@ -155,7 +170,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                 Testimonials
-                </Link>
+                </ScrollLink>
             </div>
         </motion.div>
         )}
