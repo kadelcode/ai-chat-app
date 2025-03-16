@@ -80,7 +80,7 @@ export default function LoginPage() {
             
       <form onSubmit={handleEmailLogin} className="flex flex-col gap-4 w-80">
         {/* Displays error messages */}
-        {error && <p className="text-white p-3 rounded-md bg-red-400 mt-2">{error}</p>}
+        {error && <p className="text-[#fff] p-3 rounded-md bg-[#ff6467] mt-2">{error}</p>}
         <input
           type="email"
           placeholder="Email"
