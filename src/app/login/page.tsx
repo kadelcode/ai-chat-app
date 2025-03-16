@@ -87,7 +87,8 @@ export default function LoginPage() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="p-3 rounded-md border-2 border-[#193cb8]"
+          className="p-3 rounded-md border-2"
+          style={{border: "2px solid #193cb8"}}
         />
         <input
           type="password"
@@ -96,6 +97,7 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
           required
           className="p-3 rounded-md border-2 border-[#193cb8]"
+          style={{border: "2px solid #193cb8"}}
         />
 
         <Button type="submit" className="bg-[#155dfc] hover:bg-[#1447e6] text-white cursor-pointer" disabled={loading}>
