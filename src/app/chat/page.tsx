@@ -1,20 +1,20 @@
 "use client";
-import { useAuth } from "@/context/AuthContext";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/useAuth";
+import { Loader2 } from "lucide-react";
 
 
 export default function ChatPage() {
-    const { user } = useAuth();
-    const router = useRouter();
+    const { user, loading } = useAuth(); // Protects this page
 
-    useEffect(() => {
-        if (!user) {
-            router.push("/login"); // Redirect if not logged in
-        }
-    }, [user, router]);
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+                <Loader2 className="w-8 h-8 animate-spin" />
+            </div>
+        )
+    }
 
-    if (!user) return <p>Redirecting...</p>
+    
 
     return <div>Welcome to the Chat App</div>;
 }
