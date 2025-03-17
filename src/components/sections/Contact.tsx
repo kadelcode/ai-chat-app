@@ -17,7 +17,7 @@ export default function Contact() {
                                 <input
                                   type="text"
                                   id="name"
-                                  className="mt-2 block w-full p-3 border-[#d1d5dc] shadow-sm border-2 focus:border-[#2b7fff]"
+                                  className="mt-2 block w-full p-3 border-[#d1d5dc] shadow-sm border-2 focus:border-[#2b7fff] rounded-md"
                                   placeholder="Your Name"
                                   autoComplete="true"
                                   style={{ border: "2px solid #2b7fff"}}
@@ -32,7 +32,7 @@ export default function Contact() {
                                 <input
                                   type="email"
                                   id="email"
-                                  className="mt-2 block w-full p-3 shadow-sm border-2 focus:border-[#2b7fff]"
+                                  className="mt-2 block w-full p-3 shadow-sm border-2 focus:border-[#2b7fff] rounded-md"
                                   placeholder="Your Email"
                                   autoComplete="email"
                                   style={{ border: "2px solid #2b7fff"}}
@@ -53,7 +53,7 @@ export default function Contact() {
                             </div>
                             <button
                               type="submit"
-                              className="bg-[#155dfc] hover:bg-[#1447e6] text-white font-bold py-3 px-6 rounded-full cursor-pointer"
+                              className="bg-[#155dfc] hover:bg-[#1447e6] text-white font-bold py-1 px-4 rounded-full cursor-pointer"
                             >
                                 Submit
                             </button>
