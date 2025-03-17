@@ -124,8 +124,13 @@ export default function Header() {
               className="text-[#193cb8] text-lg hover:text-[#2D72CB] cursor-pointer">
               Testimonials
             </ScrollLink>
-            <div className="hidden md:block">
-          </div>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="text-[#193cb8] text-lg hover:text-[#2D72CB] cursor-pointer">
+              Contact Us
+            </ScrollLink>
           </nav>
 
           <div className="hidden md:block">
@@ -170,6 +175,13 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                 Testimonials
+                </ScrollLink>
+                <ScrollLink
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  className="text-[#193cb8] ml-3 text-lg mb-3 hover:text-[#2D72CB] cursor-pointer">
+                  Contact Us
                 </ScrollLink>
             </div>
         </motion.div>
